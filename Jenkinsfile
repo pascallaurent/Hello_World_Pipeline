@@ -9,7 +9,7 @@ pipeline {
 
     stage('Upload to AWS') {
       steps {
-        withAWS(region: 'us-east-1', credentials: 'Hello_World_Pipeline') {
+        withAWS(region: 'us-east-1', credentials: 'hello-world-jenkins') {
           s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file: 'index.html', bucket: 'hello-world-jenkins.sokibi.com')
         }
 
